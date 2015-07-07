@@ -1,7 +1,7 @@
-var riot = require('riot');
+const riot = require('riot');
 
 // require() all files in the tag folder
-var context = require.context('./tags');
+const context = require.context('./tags');
 context.keys().forEach(key => {
   context(key);
 });
