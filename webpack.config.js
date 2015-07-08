@@ -19,7 +19,7 @@ module.exports = {
   ],
   module: {
     preLoaders: [
-      { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader?template=jade' }
+      { test: /\.tag$/, exclude: /node_modules/, loader: 'riotjs-loader', query: { template: 'jade' } }
     ],
     loaders: [
       { test: /\.js|\.tag$/, exclude: /node_modules/, loader: 'babel-loader' }

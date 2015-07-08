@@ -1,35 +1,17 @@
 app
   .ui.page.container
-
     navbar
+    div#main-content
+      //- default template if URL is blank
+      home
 
-    div#maincontent
-      h1 This is some very long content here to test word wrapping This is some very long content here to test word wrapping This is some very long content here to test word wrapping
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
-      h1 Some Content Here
+  script.
+    const RiotControl = require('riotcontrol');
+
+    RiotControl.on('route:change', (resource) => {
+      resource = resource || 'home';
+      riot.mount('#main-content', resource);
+    });
 
   style(scoped).
     .ui.page.container {
@@ -42,12 +24,17 @@ app
       margin-right: 3rem;
     }
 
-    #maincontent {
+    #main-content {
       flex: 1;
     }
 
+    /* desktop styling */
     @media (min-device-width: 768px) {
       .ui.page.container {
         flex-direction: row;
+      }
+
+      navbar {
+        width: 15rem;
       }
     }

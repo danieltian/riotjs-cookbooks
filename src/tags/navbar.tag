@@ -1,23 +1,17 @@
 navbar
   .ui.secondary.vertical.menu
-    a.active.item
+    a.item(href="#home")
       i.home.icon
       | Home
-    a.item
+    a.item(href="#dummy1")
       i.pie.chart.icon
       | Dummy Item 1
-    a.item
+    a.item(href="#dummy2")
       i.photo.icon
       | Dummy Item 2
 
   style(scoped).
+    /* override the menu width to be the width of the parent container */
     .ui.secondary.vertical.menu {
       width: auto;
     }
-
-    @media (min-device-width: 768px) {
-      .ui.secondary.vertical.menu {
-        width: 15rem;
-      }
-    }
-
