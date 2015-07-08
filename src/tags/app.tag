@@ -2,15 +2,13 @@ app
   .ui.page.container
     navbar
     div#main-content
-      //- default template if URL is blank
-      home
 
   script.
-    const RiotControl = require('riotcontrol');
+    var RiotControl = require('riotcontrol');
 
-    RiotControl.on('route:change', (resource) => {
-      resource = resource || 'home';
-      riot.mount('#main-content', resource);
+    RiotControl.on('route:change', (page) => {
+      page = page || 'home';
+      riot.mount('#main-content', page);
     });
 
   style(scoped).

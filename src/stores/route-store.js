@@ -6,4 +6,5 @@ class RouteStore {
   }
 }
 
+// this is a singleton
 module.exports = new RouteStore();
