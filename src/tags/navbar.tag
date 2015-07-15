@@ -9,12 +9,15 @@ navbar
     a.item(href="#dummy2" class="{active: page == 'dummy2'}")
       i.photo.icon
       | Dummy Item 2
+    a.item(href="#routing" class="{active: page == 'routing'}")
+      i.home.icon
+      | Routing
 
   script.
     var RiotControl = require('riotcontrol');
 
-    RiotControl.on('route:change', (page) => {
-      this.page = page || 'home';
+    RiotControl.on('navigate', (page) => {
+      this.page = page;
       this.update();
     });
 

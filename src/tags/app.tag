@@ -6,8 +6,7 @@ app
   script.
     var RiotControl = require('riotcontrol');
 
-    RiotControl.on('route:change', (page) => {
-      page = page || 'home';
+    RiotControl.on('navigate', (page) => {
       riot.mount('#main-content', page);
     });
 

@@ -4,7 +4,7 @@ var RiotControl = require('riotcontrol');
 // require() all files in the tag folder
 // NOTE: need to do this, or else mounting the app tag will not mount the child tags
 // TODO: is there a way to do this through ES6 imports?
-var context = require.context('./tags');
+var context = require.context('./tags/', true, /\.tag$/);
 context.keys().forEach(key => {
   context(key);
 });
