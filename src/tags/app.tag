@@ -1,13 +1,20 @@
 app
   .ui.page.container
+    button(onclick="{changePage}" page="home") home
+    button(onclick="{changePage}" page="dummy1") dummy1
     navbar
     div#main-content
 
   script.
     var RiotControl = require('riotcontrol');
 
+    changePage(e) {
+      console.log(e.target.attributes.page);
+      riot.mount('#main-content', e.target.getAttribute('page'));
+    }
+
     RiotControl.on('navigate', (page) => {
-      riot.mount('#main-content', page);
+      //riot.mount('#main-content', page);
     });
 
   style(scoped).

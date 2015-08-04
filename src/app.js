@@ -14,7 +14,7 @@ RiotControl.addStore(routeStore);
 
 // mount the app tag, which is the root tag for the app
 // NOTE: this will mount all child tags as well
-riot.mount('app');
+console.log(riot.mount('app'));
 
 var processRoute = (page) => {
   console.info('route changed to', page);

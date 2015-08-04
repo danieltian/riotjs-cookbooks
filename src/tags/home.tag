@@ -25,3 +25,8 @@ home
   h1 Some Content Here
   h1 Some Content Here
   h1 Some Content Here
+
+  style(scoped).
+    h1 {
+      color: red;
+    }
